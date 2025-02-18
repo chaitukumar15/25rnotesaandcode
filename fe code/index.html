@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="hitag"></h1>
+
+    <button>click me</button>
+
+
+    <script>
+
+
+
+var btn = document.getElementsByTagName("button");
+
+ 
+
+btn[0].addEventListener("click",()=>{
+
+
+    fetch("http://localhost:3005/").then((val)=>{
+
+        console.log(val);
+        return val.json()
+        
+    }).then((val)=>{
+
+        console.log(val);
+        
+        var higet=document.getElementById("hitag");
+        // val.msg="hi this is chaitanya"
+        higet.innerText=val.msg;
+
+
+    })
+
+})
+
+
+    </script>
+</body>
+</html>
